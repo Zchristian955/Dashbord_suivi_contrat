@@ -1,0 +1,14 @@
+# Environnement virtuel
+env/
+
+# Fichiers Python compilés
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Fichiers de logs
+*.log
+
+# Dossiers IDE
+.vscode/
+.idea/
