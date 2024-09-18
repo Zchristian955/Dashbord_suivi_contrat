@@ -81,36 +81,3 @@ elif statut_cloture:
 st.write('')
 st.dataframe(df, height=600, width=1500)
     
-#trie des contrats venant à terme
-# contrats_exp = df[(df['Échéance'] == "< 45 jours") | (df['Échéance'] == "< 30 jours") | (df['Échéance'] == "< 15 jours")]
-
-# def notification(plage):
-#     email = "barondegbey2004@gmail.com"
-    
-#     nom_mail = plage.groupby(['Nom', 'Date fin période ', 'Adresse mail', 'Fonction']).size().reset_index(name='count')
-#     adresse_trier = nom_mail[['Nom', 'Adresse mail', 'Date fin période ', 'Fonction']].drop_duplicates()
-    
-#     for mail in adresse_trier['Adresse mail'].unique():
-#         df_adresse = adresse_trier[adresse_trier['Adresse mail'] == mail]
-        
-#         for index, ligne in df_adresse.iterrows():          
-#             text = f"Bonjour {ligne['Nom']}\n\nVotre contrat en tant que {ligne['Fonction']} à la SBIN expire le {ligne['Date fin période ']}\n\nCordialement"
-            
-#             msg = MIMEText(text, 'plain', 'utf-8')
-#             msg['Subject'] = "Notification d'expiration de contrat"
-#             msg['From'] = email
-#             msg['To'] = mail
-
-#             server = s.SMTP("smtp.gmail.com", 587)
-#             server.starttls()
-
-#             password = "faou ciga evsr ooov"
-#             if not password:
-#                 raise ValueError("Le mot de passe de l'application Gmail n'est pas défini. Veuillez vérifier la variable d'environnement GMAIL_APP_PASSWORD.")
-
-
-#             server.login(email, password)
-#             server.sendmail(email, mail, msg.as_string())
-#             print(f"email has been sent to {mail}")
-#             server.quit()
-# notification(contrats_exp)
